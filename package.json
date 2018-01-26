@@ -1,0 +1,40 @@
+{
+    "name": "vdt-tool",
+    "version": "1.0.0",
+    "description": "vdt 文件的VS Code 插件",
+    "main": "index.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0851/vdt-tool.git"
+    },
+    "keywords": ["vdt", "templates", "vscode"],
+    "author": "wangjianliang",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/0851/vdt-tool/issues"
+    },
+    "homepage": "https://github.com/0851/vdt-tool#readme",
+    "publisher": "wangjianliang",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": ["Languages"],
+    "contributes": {
+        "languages": [
+            {
+                "id": "vdt",
+                "aliases": ["vdt", "vdt"],
+                "extensions": [".vdt"],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "vdt",
+                "scopeName": "source.html",
+                "path": "./syntaxes/vdt.tmLanguage.json"
+            }
+        ]
+    }
+}
