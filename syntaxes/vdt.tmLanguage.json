@@ -1,32 +1,47 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "vdt",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.vdt",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.vdt",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.vdt",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.html"
+    "$schema":
+        "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "vdt",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "source.js"
+        },
+        {
+            "include": "source.js.regexp"
+        },
+        {
+            "include": "source.js.jsx"
+        },
+        {
+            "include": "text.html.basic"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.vdt",
+                    "match": "\\b(if|while|for|return)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.vdt",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.vdt",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.vdt"
 }

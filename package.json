@@ -10,7 +10,12 @@
         "type": "git",
         "url": "git+https://github.com/0851/vdt-tool.git"
     },
-    "keywords": ["vdt", "templates", "vscode", "intact"],
+    "keywords": [
+        "vdt",
+        "templates",
+        "vscode",
+        "intact"
+    ],
     "author": "wangjianliang",
     "license": "MIT",
     "bugs": {
@@ -21,21 +26,32 @@
     "engines": {
         "vscode": "^1.19.0"
     },
-    "categories": ["Languages", "Other", "Snippets"],
-    "activationEvents": ["onLanguage:vdt"],
+    "categories": [
+        "Languages",
+        "Other",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onLanguage:vdt"
+    ],
     "contributes": {
         "languages": [
             {
                 "id": "vdt",
-                "aliases": ["vdt", "vdt-template"],
-                "extensions": [".vdt"],
+                "aliases": [
+                    "vdt",
+                    "vdt-template"
+                ],
+                "extensions": [
+                    ".vdt"
+                ],
                 "configuration": "./language/vdt.language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "vdt",
-                "scopeName": "source.html",
+                "scopeName": "source.vdt",
                 "path": "./syntaxes/vdt.tmLanguage.json"
             }
         ],
@@ -45,5 +61,8 @@
                 "path": "./snippets/vdt.snippets.json"
             }
         ]
+    },
+    "devDependencies": {
+        "vscode": "^1.1.10"
     }
 }
