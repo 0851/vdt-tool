@@ -1,0 +1,26 @@
+{
+    "name": "vdt-language-serve",
+    "version": "1.0.0",
+    "description": "",
+    "main": "./out/index.js",
+    "scripts": {
+        "compile": "tsc -p .",
+        "watch": "tsc --watch",
+        "preversion": "npm run compile && npm test",
+        "prepublishOnly": "npm run compile"
+    },
+    "engines": {
+        "node": ">=8"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0851/vdt-tool.git"
+    },
+    "keywords": ["vdt", "templates", "vscode", "intact"],
+    "bugs": {
+        "url": "https://github.com/0851/vdt-tool/issues"
+    },
+    "homepage": "https://github.com/0851/vdt-tool#readme",
+    "author": "wangjianliang",
+    "license": "MIT"
+}
