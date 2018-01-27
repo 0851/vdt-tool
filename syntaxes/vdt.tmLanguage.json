@@ -20,6 +20,9 @@
         },
         {
             "include": "text.html.basic"
+        },
+        {
+            "include": "#vdt-scope-interpolation"
         }
     ],
     "repository": {
@@ -39,6 +42,19 @@
                 {
                     "name": "constant.character.escape.vdt",
                     "match": "\\\\."
+                }
+            ]
+        },
+        "vdt-scope-interpolation": {
+            "name": "string.scope.interpolation.vdt",
+            "begin": "\\{{1,}",
+            "end": "\\}{1,}",
+            "patterns": [
+                {
+                    "include": "source.js"
+                },
+                {
+                    "include": "source.js.regexp"
                 }
             ]
         }
