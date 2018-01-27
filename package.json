@@ -3,10 +3,13 @@
     "version": "1.0.0",
     "displayName": "vdt扩展工具",
     "description": "vdt 文件的VS Code 插件",
-    "main": "./out/index.js",
+    "main": "./out/index",
     "icon": "asset/vdt.png",
     "scripts": {
         "compile": "tsc -p .",
+        "watch": "tsc -watch -p ./",
+        "watch:serve": "cd serve && npm run watch",
+        "postinstall": "node ./node_modules/vscode/bin/install",
         "package": "vsce package",
         "precommit": "lint-staged",
         "prepush": "npm run test:serve",
@@ -15,8 +18,9 @@
         "patch": "vsce publish patch",
         "lint": "tslint -p tslint.json",
         "test:serve": "cd serve && npm run compile && npm test",
-        "test": "npm run lint && npm run test:serve",
-        "vscode:prepublish": "npm run compile"
+        "test":
+            "npm run lint && npm run test:serve && node ./node_modules/vscode/bin/test",
+        "vscode:prepublish": "npm run compile && cd serve && npm run compile"
     },
     "lint-staged": {
         "*.ts": ["tslint --fix", "git add"]
