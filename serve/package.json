@@ -2,13 +2,8 @@
     "name": "vdt-language-serve",
     "version": "1.0.0",
     "description": "vdt-language-serve",
-    "main": "./out/index.js",
-    "scripts": {
-        "compile": "tsc -p .",
-        "watch": "tsc -watch -p ./",
-        "preversion": "npm run compile && npm test",
-        "prepublishOnly": "npm run compile"
-    },
+    "main": "index.js",
+    "scripts": {},
     "engines": {
         "node": ">=8"
     },
@@ -31,9 +26,5 @@
     "dependencies": {
         "vscode-languageserver": "^3.5.0",
         "vscode-languageserver-types": "^3.5.0"
-    },
-    "devDependencies": {
-        "vscode": "^1.1.10",
-        "typescript": "^2.6.2"
     }
 }

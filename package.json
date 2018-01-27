@@ -3,33 +3,26 @@
     "version": "1.0.0",
     "displayName": "vdt扩展工具",
     "description": "vdt 文件的VS Code 插件",
-    "main": "./out/index",
+    "main": "index.js",
     "icon": "asset/vdt.png",
     "scripts": {
-        "compile": "tsc -p .",
-        "watch": "tsc -watch -p ./",
-        "watch:serve": "cd serve && npm run watch",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "package": "vsce package",
-        "precommit": "lint-staged",
-        "prepush": "npm run test:serve",
         "minor": "vsce publish minor",
         "major": "vsce publish major",
         "patch": "vsce publish patch",
-        "lint": "tslint -p tslint.json",
-        "test:serve": "cd serve && npm run compile && npm test",
-        "test":
-            "npm run lint && npm run test:serve && node ./node_modules/vscode/bin/test",
-        "vscode:prepublish": "npm run compile && cd serve && npm run compile"
-    },
-    "lint-staged": {
-        "*.ts": ["tslint --fix", "git add"]
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "vscode:prepublish": "echo 'publish'"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/0851/vdt-tool.git"
     },
-    "keywords": ["vdt", "templates", "vscode", "intact"],
+    "keywords": [
+        "vdt",
+        "templates",
+        "vscode",
+        "intact"
+    ],
     "author": "wangjianliang",
     "license": "MIT",
     "bugs": {
@@ -40,14 +33,25 @@
     "engines": {
         "vscode": "^1.19.0"
     },
-    "categories": ["Languages", "Other", "Snippets"],
-    "activationEvents": ["onLanguage:vdt"],
+    "categories": [
+        "Languages",
+        "Other",
+        "Snippets"
+    ],
+    "activationEvents": [
+        "onLanguage:vdt"
+    ],
     "contributes": {
         "languages": [
             {
                 "id": "vdt",
-                "aliases": ["vdt", "vdt-template"],
-                "extensions": [".vdt"],
+                "aliases": [
+                    "vdt",
+                    "vdt-template"
+                ],
+                "extensions": [
+                    ".vdt"
+                ],
                 "configuration": "./language/vdt.language-configuration.json"
             }
         ],
@@ -66,10 +70,6 @@
         ]
     },
     "devDependencies": {
-        "husky": "^0.14.3",
-        "lint-staged": "^6.1.0",
-        "tslint": "^5.9.1",
-        "typescript": "^2.6.2",
         "vsce": "^1.36.1",
         "vscode": "^1.1.10"
     },

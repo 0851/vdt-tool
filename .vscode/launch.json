@@ -1,6 +1,12 @@
 // A launch configuration that launches the extension inside a new window
 {
     "version": "0.1.0",
+    "compounds": [
+        {
+            "name": "vdt-tool",
+            "configurations": ["client","serve"]
+        }
+    ],
     "configurations": [
         {
             "name": "client",
@@ -8,9 +14,7 @@
             "request": "launch",
             "runtimeExecutable": "${execPath}",
             "args": ["--extensionDevelopmentPath=${workspaceRoot}"],
-            "sourceMaps": true,
-            "outFiles": ["${workspaceRoot}/out/**/*.js"],
-            "preLaunchTask": "watch"
+            "sourceMaps": true
         },
         {
             "name": "serve",
@@ -18,9 +22,8 @@
             "request": "attach",
             "port": 6888,
             "protocol": "inspector",
-            "sourceMaps": true,
-            "outFiles": ["${workspaceRoot}/serve/out/**/*.js"],
-            "preLaunchTask": "watch:serve"
+            "outFiles": ["${workspaceRoot}/serve/**/*.js"],
+            "sourceMaps": true
         }
     ]
 }
