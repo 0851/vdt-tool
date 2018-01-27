@@ -1,3 +1,8 @@
-const vscode = require('vscode');
-const completion = require('./scripts/completion'); 
-vscode.languages.registerCompletionItemProvider('vdt', new completion());
+import * as fs from 'fs';
+import * as path from 'path';
+
+import * as vscode from 'vscode';
+
+export function activate(context: ExtensionContext) {
+    console.log(context);
+}
