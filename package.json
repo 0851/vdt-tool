@@ -8,6 +8,8 @@
     "scripts": {
         "compile": "tsc -p .",
         "package": "vsce package",
+        "precommit": "lint-staged",
+        "prepush": "npm run test:serve",
         "minor": "vsce publish minor",
         "major": "vsce publish major",
         "patch": "vsce publish patch",
@@ -61,6 +63,8 @@
     },
     "devDependencies": {
         "@types/node": "^9.3.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^6.1.0",
         "tslint": "^5.9.1",
         "typescript": "^2.6.2",
         "vsce": "^1.36.1",
