@@ -15,7 +15,6 @@
         "object-literal-shorthand": true,
         "prefer-const": true,
         "prefer-method-signature": true,
-        "quotemark": [true, "single", "avoid-escape"],
         "whitespace": true,
         "semicolon": [true, "always"],
         "space-before-function-paren": [
