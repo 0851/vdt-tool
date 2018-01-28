@@ -22,7 +22,7 @@ documents.listen(connection);
 
 //文件内容改动 , 可做代码检测
 documents.onDidChangeContent(change => {
-    console.log(change);
+    // console.log(change);
 });
 //初始化设置
 connection.onInitialize(params => {
@@ -36,9 +36,8 @@ connection.onInitialize(params => {
                 resolveProvider: true,
                 triggerCharacters: [".", ":", "<", '"', "/", "@", "*"]
             },
-            signatureHelpProvider: { triggerCharacters: ["("] },
             documentFormattingProvider: true,
-            hoverProvider: true,
+            // hoverProvider: true,
             documentHighlightProvider: true,
             documentSymbolProvider: true,
             definitionProvider: true,
@@ -47,8 +46,40 @@ connection.onInitialize(params => {
         }
     };
 });
+//监听鼠标滑过事件
+// connection.onHover(textDocumentPosition => {
+//     const document = documents.get(textDocumentPosition.textDocument.uri);
+//     console.log(document);
+// });
+
+connection.onDocumentSymbol(documentSymbolParms => {
+    const document = documents.get(documentSymbolParms.textDocument.uri);
+    // console.log(document);
+});
+//监听定义
+connection.onDefinition(definitionParams => {
+    const document = documents.get(definitionParams.textDocument.uri);
+    console.log(definitionParams, "definitionParams");
+});
+//文档引用
+connection.onReferences(referenceParams => {
+    const document = documents.get(referenceParams.textDocument.uri);
+    console.log(referenceParams, "referenceParams");
+});
+
+//文档格式化
+connection.onDocumentFormatting(formatParams => {
+    const document = documents.get(formatParams.textDocument.uri);
+    console.log(formatParams, "formatParams");
+});
+
+connection.onDocumentHighlight(documentHighlightParams => {
+    const document = documents.get(documentHighlightParams.textDocument.uri);
+});
+
 //智能感知部分开始
 connection.onCompletion(TextDocumentPositionParams => {
+    console.log(TextDocumentPositionParams, "TextDocumentPositionParams");
     return [
         {
             label: "TypeScript",
